@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Function</title>
+  </head>
+
+  <body>
+    <script>
+      // 1. Simple Callback
+      function sapa(nama, sapaan) {
+        sapaan(nama);
+      }
+
+      function salam(nama) {
+        console.log("Halo, " + nama + "!");
+      }
+
+      sapa("Kamala Khan", salam);
+    </script>
+  </body>
+</html>
