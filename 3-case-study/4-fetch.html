@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API</title>
+  </head>
+  <body>
+    <script>
+      // 1. Simple fetch example
+      const user = fetch("https://api.github.com/users/fbasdjbfsab");
+
+      async function getUser(user) {
+        try {
+          const response = await user;
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          console.info(data);
+          console.info(`Name: ${data.name}`);
+          console.info(`Public Repos: ${data.public_repos}`);
+          console.info(`URL: ${data.url}`);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      getUser(user);
+
+      // user
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     console.log(`Nama: ${data.name}`);
+      //     console.log(`Jumlah Repo: ${data.public_repos}`);
+      //   })
+      //   .catch((err) => console.error(err));
+
+      // fetch('https://api.github.com/users/sandhikagalih')
+      //   .then((res) => res.json())
+      //   .then((user) => {
+      //     console.log(`Nama : ${user.name}`);
+      //     console.log(`Jumlah Repo : ${user.public_repos}`);
+      //   });
+    </script>
+  </body>
+</html>

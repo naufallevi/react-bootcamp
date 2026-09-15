@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h1>Hello World</h1>
+    <h1>Hello WPU</h1>
+
+    <button onclick="tampilkanPesan()">Klik Saya</button>
+    <button id="tombol2">Klik Tombol 2</button>
+    <p id="output"></p>
+
+    <script>
+      const h1 = document.querySelector("h1");
+      h1.style.color = "salmon";
+
+      const p = document.createElement("p");
+      const body = document.querySelector("body");
+
+      body.appendChild(p);
+
+      console.log(h1);
+      function tampilkanPesan() {
+        document.getElementById("output").textContent = "Tombol telah diklik!";
+      }
+
+      const tombol2 = document.querySelector("#tombol2");
+      tombol2.addEventListener("dblclick", function () {
+        document.getElementById("output").textContent = "Tombol 2 telah didouble klik!";
+      });
+    </script>
+  </body>
+</html>
